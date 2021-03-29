@@ -1,6 +1,3 @@
-interface assoc {
-    [key: string]: any;
-}
 export declare class AppwriteException extends Error {
     code: number;
     response: string;
@@ -33,7 +30,7 @@ export declare class Appwrite {
      *
      * @return this
      */
-    setProject: (value: string) => this;
+    setProject(value: string): this;
     /**
      * Set Locale
      *
@@ -42,7 +39,7 @@ export declare class Appwrite {
      * @return this
      */
     setLocale: (value: string) => this;
-    call(method: string, url: URL, headers?: Headers, params?: assoc): Promise<any>;
+    private call;
     private flatten;
     account: {
         /**
@@ -843,4 +840,3 @@ export declare class Appwrite {
         updateMembershipStatus: (teamId: string, inviteId: string, userId: string, secret: string) => Promise<any>;
     };
 }
-export {};

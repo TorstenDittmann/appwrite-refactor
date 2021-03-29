@@ -51,11 +51,11 @@ export class Appwrite {
      *
      * @return this
      */
-    setProject = (value: string): this => {
+    setProject(value: string): this {
         this.headers.set('X-Appwrite-Project', value);
         this.config.project = value;
         return this;
-    };
+    }
 
     /**
      * Set Locale
@@ -68,9 +68,9 @@ export class Appwrite {
         this.headers.set('X-Appwrite-Locale', value);
         this.config.locale = value;
         return this;
-    };
+    }
 
-    async call(method: string, url: URL, headers: Headers = new Headers(), params:assoc = {}): Promise<any> {
+    private async call(method: string, url: URL, headers: Headers = new Headers(), params:assoc = {}): Promise<any> {
         method = method.toUpperCase();
         this.headers.forEach((value, key) => {
             headers.set(key, value);

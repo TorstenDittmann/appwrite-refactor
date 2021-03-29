@@ -27,20 +27,6 @@ export class Appwrite {
             'x-sdk-version': 'appwrite:web:2.0.0',
         });
         /**
-         * Set Project
-         *
-         * Your project ID
-         *
-         * @param value string
-         *
-         * @return this
-         */
-        this.setProject = (value) => {
-            this.headers.set('X-Appwrite-Project', value);
-            this.config.project = value;
-            return this;
-        };
-        /**
          * Set Locale
          *
          * @param value string
@@ -1776,6 +1762,20 @@ export class Appwrite {
      */
     setEndpoint(endpoint) {
         this.config.endpoint = endpoint;
+        return this;
+    }
+    /**
+     * Set Project
+     *
+     * Your project ID
+     *
+     * @param value string
+     *
+     * @return this
+     */
+    setProject(value) {
+        this.headers.set('X-Appwrite-Project', value);
+        this.config.project = value;
         return this;
     }
     call(method, url, headers = new Headers(), params = {}) {
